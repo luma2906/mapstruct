@@ -22,7 +22,7 @@ public class EmployeeController {
             @ApiResponse(code = 200, message = "ok"),
             @ApiResponse(code = 404, message = "employee no found"),
     })
-    @GetMapping("/empleados")
+    @GetMapping("/employee")
     public ResponseEntity<Iterable<Employee>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(iEmployeeService.getAll());
     }
@@ -31,7 +31,7 @@ public class EmployeeController {
             @ApiResponse(code = 200, message = "ok"),
             @ApiResponse(code = 404, message = "employee no found"),
     })
-    @PostMapping("/empleados")
+    @PostMapping("/employee")
     public ResponseEntity<Employee> addEmpleado(@RequestBody Employee employee) {
         return ResponseEntity.status(HttpStatus.OK).body(iEmployeeService.save(employee));
     }
