@@ -1,9 +1,9 @@
 package com.example.mapstruct.repository;
 
-import com.example.mapstruct.entity.Employee;
-import org.springframework.data.repository.CrudRepository;
+import com.example.mapstruct.model.Employee;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-
-public interface IEmployeeRepository extends CrudRepository<Employee, Long> {
+@Repository
+public interface IEmployeeRepository extends MongoRepository<Employee,String> {
 }

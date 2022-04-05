@@ -1,22 +1,21 @@
-package com.example.mapstruct.service;
+package com.example.mapstruct.service.Employee;
 
-import com.example.mapstruct.entity.Employee;
+import com.example.mapstruct.model.Employee;
 import com.example.mapstruct.repository.IEmployeeRepository;
-import com.example.mapstruct.repository.IEmployeeV2Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeServiceImpl implements IEmployeeService {
     @Autowired
-    private IEmployeeV2Repository IEmployeeRepository;
+    private IEmployeeRepository employeeRepository;
     @Override
     public Iterable<Employee> getAll() {
-        return IEmployeeRepository.findAll();
+        return employeeRepository.findAll();
     }
 
     @Override
     public Employee save(Employee employee) {
-        return IEmployeeRepository.save(employee);
+        return employeeRepository.save(employee);
     }
 }

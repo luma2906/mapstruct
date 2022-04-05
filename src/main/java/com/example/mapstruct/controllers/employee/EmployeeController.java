@@ -1,7 +1,7 @@
-package com.example.mapstruct.controllers;
+package com.example.mapstruct.controllers.employee;
 
-import com.example.mapstruct.entity.Employee;
-import com.example.mapstruct.service.IEmployeeService;
+import com.example.mapstruct.model.Employee;
+import com.example.mapstruct.service.Employee.IEmployeeService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
