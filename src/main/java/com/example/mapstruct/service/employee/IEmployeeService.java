@@ -1,4 +1,4 @@
-package com.example.mapstruct.service.Employee;
+package com.example.mapstruct.service.employee;
 
 import com.example.mapstruct.model.Employee;
 
