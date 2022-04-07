@@ -2,6 +2,7 @@ package com.example.mapstruct.controllers.auth;
 
 
 import com.example.mapstruct.controllers.security.JWTGenerate;
+import com.example.mapstruct.exception.InvalidCredentialsException;
 import com.example.mapstruct.model.User;
 import com.example.mapstruct.repository.IUserRepository;
 import com.example.mapstruct.service.UserSecurityDetailService;
@@ -35,7 +36,9 @@ public class AuthController {
         String jwt = "";
         if(BCrypt.checkpw(request.getPassword(),user.getPasswordHash())){
             jwt = jwtGenerate.generateTokenv2(user);
+            return new ResponseEntity<>(new AuthenticationResponse(jwt), HttpStatus.OK);
+        }else {
+            throw new InvalidCredentialsException();
         }
-        return new ResponseEntity<>(new AuthenticationResponse(jwt), HttpStatus.OK);
     }
 }
