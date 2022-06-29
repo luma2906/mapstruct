@@ -7,8 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeServiceImpl implements IEmployeeService {
-    @Autowired
+
     private IEmployeeRepository employeeRepository;
+
+    public EmployeeServiceImpl(IEmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
     @Override
     public Iterable<Employee> getAll() {
         return employeeRepository.findAll();
